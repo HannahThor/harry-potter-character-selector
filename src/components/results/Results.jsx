@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { SearchFilterContext } from "../wizard-search/WizardSearch";
+
 const Results = () => {
   const [characters, setCharacters] = useState();
   const { searchFilter, setSelectedCharacter } =
@@ -18,7 +19,7 @@ const Results = () => {
   }, []);
 
   return (
-    <ul className="ml-5 ">
+    <ul className="ml-5 text-white tracking-wide ">
       {characters
         ?.filter((character) => {
           return character.name
@@ -30,7 +31,7 @@ const Results = () => {
             onClick={() => {
               setSelectedCharacter(character);
             }}
-            className="my-1 cursor-pointer"
+            className="my-1 cursor-pointer transition duration-100 transform hover:scale-105"
             key={character.id}
           >
             {character.name}
